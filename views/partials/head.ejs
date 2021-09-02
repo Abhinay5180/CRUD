@@ -1,0 +1,47 @@
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="static\style.css">
+
+<!-- CSS (load bootstrap from a CDN) -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css"> -->
+<style>
+  .serial{
+    counter-reset: serial-number;
+  }
+  .serial td:first-child:before{
+    counter-increment: serial-number;
+    content: counter(serial-number);
+  }
+  body { padding-top:50px; }
+  table {
+    width:50%;
+    margin: 25px auto;
+    border-collapse: collapse;
+    border: 1px solid #eee;
+    border-bottom: 2px solid #ffd633;
+  }
+  table tr:hover{
+    background: #f4f4f4;
+    }
+  table tr:hover td{
+    color: #555;
+  } 
+  table th, table td{
+    color: #999;
+    border: 1px solid #eee;
+    padding: 5px 10px;
+    border-collapse: collapse;
+  } 
+  table th {
+    background: #ffd633;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    }
+    table td{
+      padding: 15px 10px;
+    }
+    table p{
+      text-align: center;
+    }
+</style>

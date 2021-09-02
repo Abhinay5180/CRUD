@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+</head>
+
+<body>
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+    <main>
+        <table class="serial">
+            <th>
+                <h3>Name</h3>
+            </th>
+            <th>
+                <h3>Phone</h3>
+            </th>
+            <th>
+                <h3>Email</h3>
+            </th>
+            <th>
+                <h3>Hobbies</h3>
+            </th>
+            <% formdatadetails.forEach(function(FormData) { %>
+                <tbody>
+                    <tr>
+                        <td>
+                            <p>
+                                <%= FormData.name %>
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                <%= FormData.phone %>
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                <%= FormData.email %>
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                <%= FormData.hobbies %>
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+                <% }); %>
+        </table>
+        <button id="adbtn" class="btn">Add</button>
+    <div id="formContainer">
+        <form action="/" method="POST" class="myForm">
+            <input type="text" class="myInput" name="name" placeholder="Enter your Name">
+            <input type="phone"class="myInput" name="phone" placeholder="Enter your Phone Number">
+            <input type="email"class="myInput" name="email" placeholder="Enter your Email">
+            <input type="text"class="myInput" name="hobbies" placeholder="Enter your Hobbies">
+            <button class="btn">Save</button>
+        </form>
+    </div> 
+    <div id="DelformContainer">
+        <input type="text" id="input-name" name="name" placeholder="username">
+    </form>
+    <button id="delbtn" class="btn">Delete</button>
+    </div>
+    <script src="static\script.js"></script>
+
+        
+    </main>
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+</body>
+
+</html>
