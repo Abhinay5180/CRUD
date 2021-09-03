@@ -30,8 +30,8 @@ app.use(express.json());
  app.post("/",(req,res)=>{
     var myData = new formData(req.body);
     myData.save().then(()=>{
-        res.send("This item has been saved to the database")
-//         res.redirect('/');
+//         res.send("This item has been saved to the database")
+        res.redirect('/');
 
     }).catch(()=>{
         res.status(400).send("Item was not saved to the database")
@@ -39,15 +39,13 @@ app.use(express.json());
    
 
 }) 
-var db;
-MongoClient.connect(process.env.MONGODB_URI || 'mongodb://localhost/formData',(err,client)=>db=client.db('formData'));
+// var db;
+// MongoClient.connect(process.env.MONGODB_URI || 'mongodb://localhost/formData',(err,client)=>db=client.db('formData'));
 
 app.get('/',(req,res)=>{
-db.collection('formdatas').find({}).toArray((err,result)=>{
+formdatas.find({}).toArray((err,result)=>{
     console.log(err);
-    console.log("FormData Collection:"+ JSON.stringify( result));
-    res.render('pages/formdatas.ejs',{formdatadetails : result});
-});
+   res.render('pages/formdatas.ejs',{formdatadetails : result}); 
 })
 
 // Delete Route
