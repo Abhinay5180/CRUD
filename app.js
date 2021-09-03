@@ -50,15 +50,15 @@ formData.find({},(err,formdatas)=>{
 })
 
 // Delete Route
-// app.post('/delete',(req,res)=>{
-// var username = req.body.name;
-// var formdatadetails ={"name": username}
-// db.collection('formdatas').deleteOne(formdatadetails,(err,result)=>{
-//  if (err) throw err;
-//  console.log(result);
-//  res.redirect('/');
-// })
-// })
+app.post('/delete',(req,res)=>{
+var username = req.body.name;
+var formdatadetails ={"name": username}
+formData.deleteOne(formdatadetails,(err,formdatas)=>{
+ if (err) throw err;
+ console.log(formdatas);
+ res.redirect('/');
+})
+})
 
 
  app.listen(port, ()=>{
