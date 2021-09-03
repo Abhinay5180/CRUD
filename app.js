@@ -50,11 +50,8 @@ formData.find({},(err,formdatas)=>{
 app.post('/delete',(req,res)=>{
 var username = req.body.name;
 var formdatadetails ={"name": username}
-formData.deleteOne(formdatadetails,(err,formdatas)=>{
- if (err) throw err;
- console.log(formdatas);
- res.redirect('/');
-})
+formData.deleteOne(formdatadetails)
+  res.redirect('/');
 })
 
 
