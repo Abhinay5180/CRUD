@@ -1,5 +1,4 @@
 const express = require('express');
-const MongoClient = require('mongodb').MongoClient;
 const app = express();
 const mongoose = require('mongoose');
 const ejs = require('ejs');
@@ -39,8 +38,6 @@ app.use(express.json());
    
 
 }) 
-// var db;
-// MongoClient.connect(process.env.MONGODB_URI || 'mongodb://localhost/formData',(err,client)=>db=client.db('formData'));
 
 app.get('/',(req,res)=>{
 formData.find({},(err,formdatas)=>{
@@ -53,9 +50,9 @@ formData.find({},(err,formdatas)=>{
 app.post('/delete',(req,res)=>{
 var username = req.body.name;
 var formdatadetails ={"name": username}
-formData.deleteOne(formdatadetails,(err,result)=>{
+formData.deleteOne(formdatadetails,(err,formdatas)=>{
  if (err) throw err;
- console.log(result);
+ console.log(formdatas);
  res.redirect('/');
 })
 })
