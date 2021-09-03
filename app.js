@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const ejs = require('ejs');
 
 mongoose.connect('mongodb://localhost/formData', {useNewUrlParser: true, useUnifiedTopology: true})
-const port = 8006;
+const port = process.env.PORT || 8006;
 
 const formSchema = new mongoose.Schema({
     name: String,
