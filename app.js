@@ -4,7 +4,7 @@ const app = express();
 const mongoose = require('mongoose');
 const ejs = require('ejs');
 
-mongoose.connect('mongodb://localhost/formData', {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(process.env.MONGODB_URI ||'mongodb://localhost/formData', {useNewUrlParser: true, useUnifiedTopology: true})
 const port = process.env.PORT || 8006;
 
 const formSchema = new mongoose.Schema({
@@ -40,7 +40,7 @@ app.use(express.json());
 
 }) 
 var db;
-MongoClient.connect('mongodb://localhost/formData',(err,client)=>db=client.db('formData'));
+MongoClient.connect(process.env.MONGODB_URI || 'mongodb://localhost/formData',(err,client)=>db=client.db('formData'));
 
 app.get('/',(req,res)=>{
 db.collection('formdatas').find({}).toArray((err,result)=>{
