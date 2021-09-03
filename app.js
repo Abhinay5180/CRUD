@@ -43,7 +43,7 @@ app.use(express.json());
 // MongoClient.connect(process.env.MONGODB_URI || 'mongodb://localhost/formData',(err,client)=>db=client.db('formData'));
 
 app.get('/',(req,res)=>{
-formdatas.find({}).toArray((err,result)=>{
+formData.find({}).toArray((err,result)=>{
     console.log(err);
    res.render('pages/formdatas.ejs',{formdatadetails : result}); 
 })
