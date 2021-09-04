@@ -23,6 +23,9 @@
             <th>
                 <h3>Hobbies</h3>
             </th>
+            <th>
+                <h3>ID</h3>
+            </th>
             <% formdatadetails.forEach(function(FormData) { %>
                 <tbody>
                     <tr>
@@ -44,6 +47,11 @@
                         <td>
                             <p>
                                 <%= FormData.hobbies %>
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                <%= FormData.id %>
                             </p>
                         </td>
                     </tr>
