@@ -47,16 +47,16 @@ formData.find({},(err,formdatas)=>{
 })
 
 // // Delete Route
-// app.post('/delete',(req,res)=>{
+app.post('/delete',(req,res)=>{
 
-// formData.remove({req.body.id},(err,result)=>{
-//     if(err){console.log(err);
-//            }
-//     else{res.redirect('/');
-//         }
-// })
+formData.findByIDandRemove({req.body.id},(err,result)=>{
+    if(err){console.log(err);
+           }
+    else{res.redirect('/');
+        }
+})
   
-// })
+})
 
 
  app.listen(port, ()=>{
