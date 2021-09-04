@@ -48,8 +48,8 @@ formData.find({},(err,formdatas)=>{
 
 // // Delete Route
 app.post('/delete',(req,res)=>{
-
-formData.findByIDandRemove({req.body.id},(err,result)=>{
+var userid = req.body.id;
+formData.findByIDandRemove(userid,(err,result)=>{
     if(err){console.log(err);
            }
     else{res.redirect('/');
